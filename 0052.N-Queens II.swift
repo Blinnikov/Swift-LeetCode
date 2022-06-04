@@ -1,11 +1,7 @@
 class Solution {
-    private var result: [[String]] = [[String]]()
+    private var result = 0
     
     func totalNQueens(_ n: Int) -> Int {
-        solveNQueens(n).count
-    }
-    
-    func solveNQueens(_ n: Int) -> [[String]] {
         var board: [[Character]] = Array(repeating: Array(repeating: ".", count: n), count: n)
         var queens = [(col: Int, row: Int)]()
         queens.reserveCapacity(n)
@@ -17,7 +13,7 @@ class Solution {
     
     private func tryPut(_ board: inout [[Character]], _ row: Int, _ queens: inout [(col: Int, row: Int)]) {
         if queens.count == board.count {
-            result.append(convertBoard(board))
+            result += 1
             return
         }
         
@@ -40,13 +36,5 @@ class Solution {
         }
         
         return true
-    }
-    
-    private func convertBoard(_ board: [[Character]]) -> [String] {
-        var res = [String]()
-        for row in board {
-            res.append(String(row))
-        }
-        return res
     }
 }
