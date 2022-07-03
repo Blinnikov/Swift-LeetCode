@@ -23,7 +23,6 @@ class Solution {
         }
         
         let str = String(result)
-        // print(str)
         
         return str
     }
