@@ -30,7 +30,6 @@ class Solution {
         
         if j == 0 || i == 0 {
             return 1
-            // return find(i-1, j) + 1
         }
         
         return find(i, j-1) + find(i-1, j)
