@@ -26,8 +26,6 @@ class Solution {
             return true
         }
         
-        // print("Checking (\(node.val))[\(_min)..\(_max)]")
-        
         if node.val <= _min || node.val >= _max {
             return false
         }
