@@ -1,18 +1,23 @@
-public class Solution {
-    public int[] TwoSum(int[] nums, int target) {
-        var map = new Dictionary<int,int>();
-        
-        for(int i = 0; i < nums.Length; i++) {
-            map[target-nums[i]] = i;
-        }
-        
-        for(int i = 0; i < nums.Length; i++) {
-            if(map.ContainsKey(nums[i]) && map[nums[i]] != i) {
-                return new int[2] { i, map[nums[i]] };
+class Solution {
+    func twoSum(_ nums: [Int], _ target: Int) -> [Int] {
+        var map = [Int : Int]()
+        for i in 0..<nums.count {
+            if let firstIndex = map[nums[i]] {
+                if nums[i] + nums[i] == target {
+                    return [firstIndex, i]
+                }
+            } else {
+                map[nums[i]] = i
             }
         }
         
-        return new int[0];
+        for i in 0..<nums.count {
+            let remainder = target - nums[i]
+            if let remainderIndex = map[remainder], remainderIndex != i {                
+                return [remainderIndex, i]
+            }
+        }
         
+        return []
     }
 }
