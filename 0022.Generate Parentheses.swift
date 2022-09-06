@@ -1,7 +1,10 @@
 class Solution {
+    private var answer = [String]()
     
     func generateParenthesis(_ n: Int) -> [String] {
-        return recurse(n)
+        recurse_v2("", 0, 0, n)
+        return answer
+        // return recurse(n)
     }
     
     private func recurse(_ n: Int) -> [String] {
@@ -19,6 +22,21 @@ class Solution {
         }
         
         return res
+    }
+    
+    private func recurse_v2(_ current: String, _ open: Int, _ closed: Int, _ n: Int) {
+        if current.count == n*2 {
+            answer.append(current)
+            return
+        }
+        
+        if open < n {
+            recurse_v2(current + "(", open+1, closed, n)
+        }
+        
+        if closed < open {
+            recurse_v2(current + ")", open, closed+1, n)
+        }
     }
     
     private func generateParenthesis_v1(_ n: Int) -> [String] {
