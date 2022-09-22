@@ -1,10 +1,14 @@
 class Solution {
     func reverseWords(_ s: String) -> String {
-        var arr = Array(s)
+        s.split(separator: " ").map { String($0.reversed()) }.joined(separator: " ")
+        
+    }
+    
+    private func reverseWords_v1(_ s: String) -> String {
         var stack = [Character]()
         var result = ""
         
-        for ch in arr {
+        for ch in s {
             if ch == " " {
                 result += "\(String(stack.reversed())) "
                 stack = []
