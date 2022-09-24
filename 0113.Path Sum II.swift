@@ -18,7 +18,7 @@ class Solution {
     
     func pathSum(_ root: TreeNode?, _ targetSum: Int) -> [[Int]] {
         guard let root = root else {
-            return [[Int]]()
+            return result
         }
         traverse(root, [], targetSum)
         return result
