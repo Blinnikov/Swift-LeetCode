@@ -24,7 +24,7 @@ class Solution {
                 while height[right] <= rh && left < right {
                     right -= 1
                 }
-            } else { // lh == rh
+            } else {
                 var temp = left 
                 while height[temp] <= lh && temp < right {
                     temp += 1
