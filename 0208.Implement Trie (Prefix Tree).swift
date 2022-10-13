@@ -3,7 +3,6 @@ class Node {
     var terminal = false 
 }
 
-
 class Trie {
     private let root: Node
     
