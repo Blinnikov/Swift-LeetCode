@@ -1,6 +1,5 @@
 class Solution {
     func intToRoman(_ num: Int) -> String {
-        
         let M = ["", "M", "MM", "MMM"]
         let C = ["", "C", "CC", "CCC", "CD", "D", "DC", "DCC", "DCCC", "CM"]
         let X = ["", "X", "XX", "XXX", "XL", "L", "LX", "LXX", "LXXX", "XC"]
