@@ -26,13 +26,10 @@ class Solution {
                 found += 1
             }
             
-            // print("\(left), \(right)")
-            
             while left <= right, found == mapT.count {
                 let ch = charsS[left]
                 
                 if result.count == -1 || right - left + 1 < result.count {
-                    // print("Updating result")
                     result.count = right - left + 1
                     result.left = left
                     result.right = right
