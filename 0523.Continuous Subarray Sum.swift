@@ -28,13 +28,9 @@ class Solution {
             pa[i] = pa[i-1] + nums[i-1]
         }
         
-        // print(pa)
-        
         for i in 0..<pa.count - 2 {
             for j in i + 2..<pa.count {
                 let sum = pa[j] - pa[i]
-                
-                // print("Sum(\(i)..\(j)) == \(sum)")
                 
                 if sum % k == 0 {
                     return true
