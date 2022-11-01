@@ -23,7 +23,6 @@ class Solution {
         }
         
         if row == rows - 1 {
-            // print(col, grid[row][col])
             return col + grid[row][col]
         }
 
