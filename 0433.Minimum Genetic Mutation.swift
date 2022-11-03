@@ -7,8 +7,6 @@ class Solution {
         let start = Array(start)
         let end = Array(end)
         
-        // print(arrays)
-        
         var queue = [[Character]]()
         var seen = Set<[Character]>()
         queue.append(start)
