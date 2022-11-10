@@ -4,16 +4,10 @@ class Solution {
         var chars = Array(s)
 
         for ch in chars {
-            if stack.isEmpty {
+            if stack.isEmpty || stack.last != ch {
                 stack.append(ch)
-                continue
-            }
-
-            if stack.last == ch {
-                stack.removeLast()
-                continue
             } else {
-                stack.append(ch)
+                stack.removeLast()
             }
         }
 
