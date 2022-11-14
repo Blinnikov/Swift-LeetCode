@@ -6,7 +6,6 @@ class Solution {
         for i in 0..<n {
             for j in i+1..<n {
                 if areCrossing(stones[i], stones[j]) {
-                    // print("Union \(i) and \(j)")
                     uf.union(i, j)
                 }
             }
