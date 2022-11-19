@@ -1,5 +1,4 @@
 class Solution {
-    
     private let directions = [
         (row: 1, col: 0),
         (row: -1, col: 0),
