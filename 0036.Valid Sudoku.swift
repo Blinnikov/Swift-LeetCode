@@ -1,5 +1,4 @@
 class Solution {
-    
     private var board = [[Character]]()
     
     func isValidSudoku(_ board: [[Character]]) -> Bool {
