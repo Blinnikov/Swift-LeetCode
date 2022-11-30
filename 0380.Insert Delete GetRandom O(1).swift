@@ -1,5 +1,4 @@
 class RandomizedSet {
-
     private var set: Set<Int>
 
     init() {
