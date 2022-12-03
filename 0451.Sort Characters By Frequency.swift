@@ -8,7 +8,7 @@ class Solution {
         
         let sorted = map.sorted { $0.1 > $1.1 }
         var res = [Character]()
-        
+
         for pair in sorted {
             res += Array(repeating: pair.0, count: pair.1)
         }
