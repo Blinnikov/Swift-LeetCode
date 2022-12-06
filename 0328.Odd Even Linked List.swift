@@ -8,6 +8,7 @@
  *     public init(_ val: Int, _ next: ListNode?) { self.val = val; self.next = next; }
  * }
  */
+
 class Solution {
     func oddEvenList(_ head: ListNode?) -> ListNode? {
         if head == nil {
