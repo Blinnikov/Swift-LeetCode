@@ -4,7 +4,7 @@ class Solution {
             return n
         }
         
-        // TLE
+        // Recursion - TLE
         // return climbStairs(n-1) + climbStairs(n-2)
         
         var dp = Array(repeating: 0, count: n)
