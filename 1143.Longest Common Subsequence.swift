@@ -2,7 +2,7 @@ class Solution {
     func longestCommonSubsequence(_ text1: String, _ text2: String) -> Int {
         var arr1 = Array(text1), m = arr1.count
         var arr2 = Array(text2), n = arr2.count
-        var dp = Array(repeating: Array(repeating: 0, count: m+1), count: n+1)
+        var dp = Array(repeating: Array(repeating: 0, count: m + 1), count: n + 1)
         
         for i in 1...n {
             for j in 1...m {
