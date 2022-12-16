@@ -1,6 +1,5 @@
 
 class MyQueue {
-    
     var left: [Int]
     var right: [Int]
 
