@@ -9,7 +9,6 @@ class Solution {
         
         while queue.count > 0 {
             var count = queue.count 
-            
             while count > 0 {
                 let item = queue.removeLast()
                 if item.0 == target {
