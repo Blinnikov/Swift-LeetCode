@@ -32,13 +32,13 @@ class Solution {
 
         grid[row][col] = -1
 
-        var res = dfs(row - 1, col, current + 1, total)
-        res += dfs(row, col + 1, current + 1, total)
-        res += dfs(row + 1, col, current + 1, total)
-        res += dfs(row, col - 1, current + 1, total)
+        var result = dfs(row - 1, col, current + 1, total)
+        result += dfs(row, col + 1, current + 1, total)
+        result += dfs(row + 1, col, current + 1, total)
+        result += dfs(row, col - 1, current + 1, total)
 
         grid[row][col] = 0;
         
-        return res
+        return result
     }
 }
