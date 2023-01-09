@@ -6,8 +6,6 @@ class Solution {
             map[t, default: 0] += 1
         }
 
-        print(map)
-
         var ans = 0
 
         for k in map.keys {
