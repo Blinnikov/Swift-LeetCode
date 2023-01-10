@@ -14,23 +14,11 @@
  * }
  */
 class Solution {
-    func isSymmetric(_ root: TreeNode?) -> Bool {
-        guard let node = root else {
-            return true
+    func isSameTree(_ p: TreeNode?, _ q: TreeNode?) -> Bool {
+        if let p = p, let q = q {
+            return p.val == q.val && isSameTree(p.left, q.left) && isSameTree(p.right, q.right)
         }
-        
-        return checkSubTrees(node.left, node.right)
-    }
-    
-    private func checkSubTrees(_ left: TreeNode?, _ right: TreeNode?) -> Bool {
-        if left == nil && right == nil {
-            return true
-        }
-        
-        if (left == nil && right != nil) || (left != nil && right == nil) {
-            return false
-        }
-        
-        return left!.val == right!.val && checkSubTrees(left!.left, right!.right) && checkSubTrees(left!.right, right!.left)
+
+        return p == nil && q == nil
     }
 }
