@@ -11,14 +11,13 @@ class Solution {
         var minRow = 0, maxRow = rows-1
         
         var itemsLeft = rows*cols
-        // print("Originally items left \(itemsLeft)")
         
         while itemsLeft > 0 {
             var subRes = travel(true, minRow, minCol, maxCol)
             result += subRes
             itemsLeft -= subRes.count
             minRow += 1
-            // print("items left left to right \(itemsLeft), sub res = \(subRes)")
+            
             if itemsLeft <= 0 {
                 break
             }
@@ -27,7 +26,7 @@ class Solution {
             result += subRes
             itemsLeft -= subRes.count
             maxCol -= 1
-            // print("items left top to bottom \(itemsLeft), sub res = \(subRes)")
+
             if itemsLeft <= 0 {
                 break
             }
@@ -36,7 +35,7 @@ class Solution {
             result += subRes
             itemsLeft -= subRes.count
             maxRow -= 1
-            // print("items left right to left \(itemsLeft), sub res = \(subRes)")
+
             if itemsLeft <= 0 {
                 break
             }
@@ -45,7 +44,7 @@ class Solution {
             result += subRes
             itemsLeft -= subRes.count
             minCol += 1
-            // print("items left bottom to top \(itemsLeft), sub res = \(subRes)")
+
             if itemsLeft <= 0 {
                 break
             }
