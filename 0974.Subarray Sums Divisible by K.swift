@@ -1,6 +1,18 @@
 class Solution {
-
     func subarraysDivByK(_ nums: [Int], _ k: Int) -> Int {
+        var remainder = 0
+        var result = 0
+
+        var remainderCount = Array(repeating: 0, count: k)
+        remainderCount[0] = 1
+
+        for n in nums {
+            remainder = (remainder + n % k + k) % k
+            result += remainderCount[remainder]
+            remainderCount[remainder] += 1
+        }
+
+        return result
     }
 
     // TLE 68/73
