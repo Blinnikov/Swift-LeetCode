@@ -5,7 +5,6 @@ class Solution {
         var sub = [String]()
         dfs(0, &sub, Array(s))
         return result
-        
     }
     
     private func dfs(_ s: Int, _ sub: inout [String], _ word: [Character]) {
