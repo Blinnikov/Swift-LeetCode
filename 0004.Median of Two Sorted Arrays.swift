@@ -18,7 +18,6 @@ class Solution {
             var midShort = (lo + hi) / 2
             var midLong = (totalCount + 1) / 2 - midShort
             
-            // print("midShort=\(midShort), midLong=\(midLong)")
             // printArrays(short, midShort, long, midLong)
             
             let leftShort = midShort == 0 ? Int.min : short[midShort - 1]
