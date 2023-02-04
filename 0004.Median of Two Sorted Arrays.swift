@@ -137,7 +137,6 @@ class Solution {
         }
         
         if m1 > m2 {
-            // return findMedianRecursively(nums1, 0, s1 + (e1-s1)/2 + 1, nums2, s2 + (e2-s2)/2, e2);
             return findMedianRecursively(nums1, 0, s1 + (e1-s1)/2, nums2, s2 + (e2-s2)/2 + 1, e2);
         } else {
             return findMedianRecursively(nums1, s1 + (e1-s1)/2 + 1, e1, nums2, s2, s2 + (e2-s2)/2);
