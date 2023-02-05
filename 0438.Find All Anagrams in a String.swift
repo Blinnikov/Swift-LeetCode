@@ -16,6 +16,7 @@ class Solution {
 
         for i in 0..<s.count {
             work[s[i]] += 1
+
             if i - p.count >= 0 {
                 work[s[i-len]] -= 1
             }
