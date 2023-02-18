@@ -13,6 +13,7 @@
  *     }
  * }
  */
+
 class Solution {
     func invertTree(_ root: TreeNode?) -> TreeNode? {
         guard let root = root else {
