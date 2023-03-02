@@ -27,6 +27,7 @@ class Solution {
         }
         
         chars = Array(str)
+        
         return str.count
     }
 }
