@@ -20,7 +20,6 @@ class Solution {
         
         var curr: ListNode? = head
         while curr != nil && curr!.val != nonExistVal {
-            // print("Checking \(curr!.val)")
             curr!.val = nonExistVal
             curr = curr!.next
         }
