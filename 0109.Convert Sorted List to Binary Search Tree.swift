@@ -33,13 +33,10 @@ class Solution {
             pointer = pointer!.next
         }
 
-        print(_nums)
-
         return transform(0, _nums.count - 1)
     }
     
     private func transform(_ s: Int, _ e: Int) -> TreeNode? {
-        // print("Start - \(s), end - \(e)")
         if e < s {
             return nil
         }
@@ -49,9 +46,6 @@ class Solution {
         }
         
         let mid = s + (e - s + 1) / 2
-        let left = mid - 1 >= s ? transform(s, mid - 1) : nil
-        let right = mid + 1 <= e ? transform(mid + 1, e) : nil
-        
-        return TreeNode(_nums[mid], left, right)
+        return TreeNode(_nums[mid], transform(s, mid - 1), transform(mid + 1, e))
     }
 }
