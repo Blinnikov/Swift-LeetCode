@@ -39,9 +39,7 @@ class Solution {
 
             while levelCurrentCount > 0 {
                 let node = queue.removeLast()
-                if (level == height - 1) && node.left == nil && node.right != nil {
-                    return false
-                }
+
                 if let left = node.left {
                     if wasEmptyNodeOnLeafLevel {
                         return false
@@ -50,6 +48,7 @@ class Solution {
                 } else if level == height - 1 {
                     wasEmptyNodeOnLeafLevel = true
                 }
+                
                 if let right = node.right {
                     if wasEmptyNodeOnLeafLevel {
                         return false
