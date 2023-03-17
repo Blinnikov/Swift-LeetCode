@@ -18,6 +18,7 @@ class Trie {
             }
             cur = cur.children[ch]!
         }
+        
         cur.terminal = true
     }
     
