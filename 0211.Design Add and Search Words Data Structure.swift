@@ -1,17 +1,15 @@
+
 class WordDictionary {
     private let aCode = 97
-    private var term = [Character]()
+    private var trie = Node()
     private var cache = [String: Bool]()
     
     class Node {
         var terminal = false
         var children: [Node?] = Array(repeating: nil, count: 26)
     }
-    
-    private var trie = Node()
 
-    init() {
-    }
+    init() { }
     
     func addWord(_ word: String) {
         var curr = trie
@@ -31,37 +29,39 @@ class WordDictionary {
         if let found = cache[word] {
             return found
         }
-        
-        term = Array(word)
-        defer {
-            term = []
-        }
-        // print("Searching for \(word)")
-        let result = dfs(0, trie)
+
+        let result = dfs(Array(word), 0, trie)
         cache[word] = result
         return result
     }
     
-    private func dfs(_ idx: Int, _ node: Node) -> Bool {
-        if idx == term.count {
+    private func dfs(_ word: [Character], _ idx: Int, _ node: Node) -> Bool {
+        if idx == word.count {
             return node.terminal
         }
         
-        let ch = term[idx]
+        let ch = word[idx]
         
-            if ch == "." {
-                for n in 0..<26 {
-                    if node.children[n] != nil && dfs(idx+1, node.children[n]!) {
-                        return true
-                    }
+        if ch == "." {
+            for n in 0..<26 {
+                if node.children[n] != nil && dfs(word, idx+1, node.children[n]!) {
+                    return true
                 }
-                return false
-            } else {
-                let chIdx = Int(ch.asciiValue!) - aCode
-                if node.children[chIdx] == nil {
-                    return false
-                }
-                return dfs(idx+1, node.children[chIdx]!)
             }
+            return false
+        } else {
+            let chIdx = Int(ch.asciiValue!) - aCode
+            if node.children[chIdx] == nil {
+                return false
+            }
+            return dfs(word, idx+1, node.children[chIdx]!)
+        }
     }
 }
+
+/**
+ * Your WordDictionary object will be instantiated and called as such:
+ * let obj = WordDictionary()
+ * obj.addWord(word)
+ * let ret_2: Bool = obj.search(word)
+ */
