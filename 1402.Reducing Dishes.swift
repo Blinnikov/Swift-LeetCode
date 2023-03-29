@@ -1,6 +1,7 @@
 class Solution {
     func maxSatisfaction(_ satisfaction: [Int]) -> Int {
         let s = satisfaction.sorted()
+        
         var total = 0
         var res = 0
 
