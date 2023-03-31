@@ -11,15 +11,12 @@ class Solution {
             maxProfitAfterFirstRound[i] = maxProfit
         }
         
-        // print(maxProfitAfterFirstRound)
-        
         var maxPrice = Int.min
         var maxProfitTotal = 0
         
         for i in stride(from: prices.count-1, to: 0, by: -1) {
             maxPrice = max(maxPrice, prices[i])
             maxProfitTotal = max(maxProfitTotal, maxPrice - prices[i] + maxProfitAfterFirstRound[i])
-            // print("At day \(i) price=\(prices[i]), secondProfit=\(maxPrice-prices[i])")
         }
         
         return maxProfitTotal
