@@ -47,6 +47,5 @@ class Solution {
         }
         
         return result.count == -1 ? "" : String(charsS[result.left...result.right])
-        
     }
 }
