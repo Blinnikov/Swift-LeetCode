@@ -2,8 +2,7 @@
 class Solution {
     func findDifference(_ nums1: [Int], _ nums2: [Int]) -> [[Int]] {
 //         let first = Array(Set(nums1).subtracting(Set(nums2)))
-//         let second = Array(Set(nums2).subtracting(Set(nums1)))
-        
+//         let second = Array(Set(nums2).subtracting(Set(nums1)))       
 //         return [first, second]
         
         var map = [Int:Int]()
