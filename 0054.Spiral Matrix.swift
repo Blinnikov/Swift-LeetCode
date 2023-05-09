@@ -10,14 +10,14 @@ class Solution {
         var minCol = 0, maxCol = cols-1
         var minRow = 0, maxRow = rows-1
         
-        var itemsLeft = rows*cols
+        var itemsLeft = rows * cols
         
         while itemsLeft > 0 {
             var subRes = travel(true, minRow, minCol, maxCol)
             result += subRes
             itemsLeft -= subRes.count
             minRow += 1
-            
+
             if itemsLeft <= 0 {
                 break
             }
@@ -55,6 +55,8 @@ class Solution {
     
     private func travel(_ row: Bool, _ num: Int, _ from: Int, _ to: Int) -> [Int] {
         var result: [Int] = []
+        result.reserveCapacity(abs(from - to) + 1)
+
         let direction = from <= to ? 1 : -1
         
         for i in stride(from: from, through: to, by: direction) {
