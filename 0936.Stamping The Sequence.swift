@@ -11,7 +11,6 @@ class Solution {
         var ans = [Int]()
         
         for i in 0...(n-m) {
-            // print(i, n, m, n-m)
             var made = Set<Int>()
             var todo = Set<Int>()
             
@@ -35,11 +34,7 @@ class Solution {
                     }
                 }
             }
-            
-            // print("After todo loop")
         }
-        
-        // print("After for")
         
         while !queue.isEmpty {
             let i = queue.removeLast()
