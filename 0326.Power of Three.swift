@@ -14,7 +14,7 @@ class Solution {
 //                 return true 
 //             }
             
-//             if n%3 != 0 {
+//             if (n % 3) != 0 {
 //                 return false
 //             }
             
