@@ -3,7 +3,6 @@ class Solution {
     private let zeroAsciiValue = 48
     
     func calculate(_ s: String) -> Int {
-        // print(Character("0").asciiValue)
         let chars = Array(s)
         var stack = [Int]()
         var current = 0
