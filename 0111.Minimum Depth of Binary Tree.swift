@@ -15,18 +15,18 @@
  */
 class Solution {
     func minDepth(_ root: TreeNode?) -> Int {
-        if root == nil {
+        guard let root = root else {
             return 0
         }
         
-        if root!.left == nil && root!.right != nil {
-            return 1 + minDepth(root!.right)
+        if root.left == nil && root.right != nil {
+            return 1 + minDepth(root.right)
         }
         
-        if root!.left != nil && root!.right == nil {
-            return 1 + minDepth(root!.left)
+        if root.left != nil && root.right == nil {
+            return 1 + minDepth(root.left)
         }
         
-        return 1 + min(minDepth(root!.left), minDepth(root!.right))
+        return 1 + min(minDepth(root.left), minDepth(root.right))
     }
 }
