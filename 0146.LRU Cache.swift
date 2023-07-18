@@ -117,10 +117,6 @@ class LRUCache {
         print(res)
     }
     
-    private func printMap() {
-        print("Map: ", map)
-    }
-    
     private class TreeNode: CustomStringConvertible {
         let key: Int
         var val: Int
