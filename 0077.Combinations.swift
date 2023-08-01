@@ -18,8 +18,7 @@ class Solution {
         for i in from...to {
             var copy = cur
             copy.append(i)
-            // print(copy)
-            cycle(step+1, k, i+1, to, copy, &res)
+            cycle(step + 1, k, i + 1, to, copy, &res)
         }
     }
 }
