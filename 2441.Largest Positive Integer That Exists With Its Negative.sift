@@ -1,0 +1,15 @@
+class Solution {
+    func findMaxK(_ nums: [Int]) -> Int {
+        let set = Set(nums)
+
+        var res = -1
+
+        for n in nums {
+            if n > res, set.contains(-n) {
+                res = n
+            }
+        }
+
+        return res
+    }
+}
